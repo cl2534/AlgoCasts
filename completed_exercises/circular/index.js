@@ -11,14 +11,17 @@
 //   b.next = c;
 //   c.next = b;
 //   circular(l) // true
+// a (head) - b <-> c
 
+// a - b - c - d - e - f - g 
 function circular(list) {
-  let slow = list.getFirst();
-  let fast = list.getFirst();
+  let slow = list.getFirst(); //a
+  let fast = list.getFirst(); //a
 
+//b & c
   while (fast.next && fast.next.next) {
-    slow = slow.next;
-    fast = fast.next.next;
+    slow = slow.next; //b
+    fast = fast.next.next; //b
 
     if (slow === fast) {
       return true;

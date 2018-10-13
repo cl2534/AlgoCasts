@@ -6,9 +6,17 @@
 // --- Examples:
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
+// palindrome('abccba')
+// function palindrome(str) {
+//   return str.split('').every((char, i) => char === str[str.length - i - 1])
+// }
 
-function palindrome(str) {
-  return str.split('').every((char, i) => char === str[str.length - i - 1])
+const palindrome = (str) => {
+  return str.split('').every((char, i) => char === str[str.length - 1 - i])
+}
+
+const palindrome = (str) => {
+  return str === str.split('').reverse().join('')
 }
 
 // const reversed = str.split('').reverse().join('')
